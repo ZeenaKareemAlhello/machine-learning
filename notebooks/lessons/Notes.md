@@ -1,7 +1,8 @@
 
 # supervised ML
 
-- linear regression
+1- linear regression (linear model)
 
-- classification
+2- classification:
+ - binary (Logistic Regression)(linear model)
 
