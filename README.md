@@ -35,5 +35,5 @@ docker run -it churn-test bash
  
 # install nbstripout to let .git ignore the metadata of notebooks
 pipenv install nbstripout
-nbstripout --install
+pipenv run nbstripout --install --attributes .gitattributes
 
