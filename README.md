@@ -1,4 +1,4 @@
-1. python -m ipykernel install --user --name=ml_env --display-name "Python (ml_env)"
+1. python -m ipykernel install --user --name=ml_env --display-name "Python(ml_env)"
 1. Select the Python Interpreter from the Command Palette
 
 python3 -m pip install --upgrade pip setuptools wheel --user
@@ -7,7 +7,9 @@ python3 -m pip install --user uv
   
    uv venv .venv
    uv init
-   uv  
+   uv
+   to install the packages from uv.lock
+   uv sync  
 
 uv add notebook jupyter jupyterlab
 uv add numpy pandas scikit-learn seaborn jupyter
