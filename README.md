@@ -1,18 +1,17 @@
 1. python -m ipykernel install --user --name=ml_env --display-name "Python (ml_env)"
 1. Select the Python Interpreter from the Command Palette
-   
-2. Create and Activate a Virtual Environment from terminal
-   pipenv install
-   # runs the commands in the env (option 1)
-   pipenv shell 
-   # create .env folder in the project dir
-   PIPENV_VENV_IN_PROJECT=1 pipenv install
-   # to run comands with the env (option2)
-   pipenv run 
 
-pipenv install notebook jupyter jupyterlab
-pipenv install numpy pandas scikit-learn seaborn jupyter
-pipenv install black "black[jupyter]"
+python3 -m pip install --upgrade pip setuptools wheel --user
+python3 -m pip install --user uv
+2. Create and Activate a Virtual Environment from terminal
+  
+   uv venv .venv
+   uv init
+   uv  
+
+uv add notebook jupyter jupyterlab
+uv add numpy pandas scikit-learn seaborn jupyter
+uv add black "black[jupyter]"
 
 command to reformat the jupyter notebook:
  black --ipynb  src/test.ipynb
@@ -34,6 +33,9 @@ open bash in the image container:
 docker run -it churn-test bash
  
 # install nbstripout to let .git ignore the metadata of notebooks
-pipenv install nbstripout
-pipenv run nbstripout --install --attributes .gitattributes
+uv add nbstripout
+uv run nbstripout --install --attributes .gitattributes
 
+# use Fastapi to build service app
+uv add uvicorn
+uv run uvicorn src.service.churn:app --host 0.0.0.0 --port 9696 --reload
