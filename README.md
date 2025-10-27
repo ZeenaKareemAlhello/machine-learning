@@ -33,3 +33,7 @@ docker run -it --rm -p 9696:9696 churn-test
 open bash in the image container:
 docker run -it churn-test bash
  
+# install nbstripout to let .git ignore the metadata of notebooks
+pipenv install nbstripout
+nbstripout --install
+
