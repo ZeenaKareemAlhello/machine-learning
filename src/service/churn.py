@@ -3,6 +3,7 @@ import pickle
 from typing import Dict, Any
 from pydantic import BaseModel, Field
 from typing import Literal
+import uvicorn
 
 app = FastAPI(title="churn")
 
@@ -62,4 +63,4 @@ def predict(customer: Customer) -> PredictResponse:
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=9696)
+    uvicorn.run(app, host="0.0.0.0", port=9696)
